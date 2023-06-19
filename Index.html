@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,200;1,800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="sidebar.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="button.css">
+    <link rel="stylesheet" type="text/css" href="records.css">
+    <link rel="stylesheet" type="text/css" href="modal.css">
+
+    <script src="main.js" defer></script>
+    <title>Usuários</title>
+</head>
+<body>
+    <header>
+        <div class="sidebar">
+            <div class="logocontent">
+                <div class="logo">
+                    <img class="novaroma" src="image_11.svg">
+                    <i class='bx bx-menu' id="btn"></i>
+                </div>
+                <!-- logoContent -->
+                <ul class="nav_list">
+        
+                    <li>
+                        <i class='bx bx-search' ></i>
+                        <input type="search" name="search" placeholder="Procurar...">
+                        <span class="toolipe">Procurar</span>
+                    </li>
+        
+                    <li>
+                        <a href="http://127.0.0.1:5501/tela%20inicial/index%20(1).html">
+                            <i class='bx bx-grid-alt' ></i>
+                            <span class="links_name">Inicio</span>
+                            <span class="toolipe">Inicio</span>
+                        </a>
+                    </li>
+        
+                    
+        
+                    <li>
+                        <a href="http://127.0.0.1:5501/profile/index-css-perfil.html">
+                            <i class='bx bx-user' ></i>
+                            <span class="links_name">Perfil</span>
+                            <span class="toolipe">Perfil</span>
+                        </a>
+                    </li>
+        
+                    <li>
+                        <a href="http://127.0.0.1:5501/Usuarios%20novo/Index.html">
+                            <i class='bx bxs-contact'></i>
+                            <span class="links_name">Usuários</span>
+                            <span class="toolipe">Usuários</span>
+                        </a>
+                    </li>
+        
+                    <li>
+                        <a href="http://127.0.0.1:5501/evidencias/evi.html">
+                            <i class='bx bx-folder-open' ></i>
+                            <span class="links_name">Evidências</span>
+                            <span class="toolipe">Evidências</span>
+                        </a>
+                    </li>
+        
+                    <li>
+                        <a href="http://127.0.0.1:5501/documentos/doc2.html">
+                            <i class='bx bx-folder-open' ></i>
+                            <span class="links_name">Documentos</span>
+                            <span class="toolipe">Documentos</span>
+                        </a>
+                        
+                    </li>
+    
+                    <li>
+                        <a href="#">
+                            <i class='bx bx-chat' ></i>
+                            <span class="links_name">Suporte</span>
+                            <span class="toolipe">Suporte</span>
+                        </a>
+                        
+                    </li>
+    
+                </ul>
+            <div class="profileContent">
+                <div class="profile">
+                   
+                    <i class='bx bx-log-out' id="logout" ></i>
+                </div>
+    
+            </div>
+    
+        </div>
+    
+        
+            <div class="homeContent">
+                <h2 >Usuários</h2>
+            </div>
+        
+            <script>
+                const btn = document.querySelector('#btn');
+                const bxSearch = document.querySelector('.bx-search');
+                const sidebar = document.querySelector('.sidebar');
+                const home = document.querySelector('.homeContent');
+        
+                btn.addEventListener('click',()=>{
+                    sidebar.classList.toggle('active');
+                    home.classList.toggle('active');
+                });
+        
+                bxSearch.addEventListener('click',()=>{
+                    sidebar.classList.toggle('active');
+                    home.classList.toggle('active');
+                });
+            </script>
+        
+
+   </header>
+   <main>
+    <button type="button" class="button blue mobile" id="cadastrarCliente">Cadastrar Funcionário</button>
+    <table id="tbClient" class="records">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th>Curso</th>
+                <th>Cidade</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            
+        </tbody>
+    </table>
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <header class="modal-header">
+                <h2>Novo Funcionario</h2>
+                <span class="modal-close" id="modalClose">&#10006;</span>
+            </header>
+            <form id="form" class="modal-form">
+                <input type="text" id="nome" data-index="new"class="modal-field" placeholder="Nome do Funcionario" required>
+                <input type="email" id="email" class="modal-field" placeholder="e-mail do Funcionario" required>
+                <input type="text" id="curso" class="modal-field" placeholder="Curso do Funcionario" required>
+                <input type="text" id="cidade" class="modal-field" placeholder="Cidade do Funcionario" required>
+            </form>
+            <footer class="modal-footer">
+                <button id= "salvar" class="button green">Salvar</button>
+                <button id= "cancelar"class="button blue">Cancelar</button>
+            </footer>
+        </div>
+    </div>
+</main>
+</body>
+</html>
